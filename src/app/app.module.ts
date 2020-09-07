@@ -16,13 +16,15 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { ROUTES } from './app.routes';
 import { from } from 'rxjs';
+import { PaisesComponent } from './components/paises/paises.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    PaisesComponent
   ],
   imports: [
     BrowserModule,
