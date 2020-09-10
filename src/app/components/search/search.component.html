@@ -1,16 +1,7 @@
 <div class="row">
   <div class="col">
-    <input #termino type="text" (keyup)="search(termino.value)" class="form-control" placeholder="shearch artist">
+    <input #termino type="text" (keyup)="search(termino.value)" class="form-control" placeholder="search artist">
   </div>
 </div>
 
-<div class="card-columns m-5">
-
-  <div *ngFor="let artist of artists "
-  class="card">
-    <img [src]="artist.images[0].url" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{ artist.name }}</h5>
-    </div>
-  </div>
-</div>
+<app-tarjetas [items]="artists"></app-tarjetas>

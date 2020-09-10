@@ -18,6 +18,11 @@ import { ROUTES } from './app.routes';
 import { from } from 'rxjs';
 import { PaisesComponent } from './components/paises/paises.component';
 
+// *Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,10 @@ import { PaisesComponent } from './components/paises/paises.component';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    PaisesComponent
+    PaisesComponent,
+    NoimagePipe,
+    TarjetasComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
