@@ -17,7 +17,7 @@ export class SpotifyService {
 
     const URL = `https://api.spotify.com/v1/${query}`;
     const headers = new HttpHeaders({
-      Authorization: 'Bearer BQCe2TykvNGuGtIRnrqorR-2jnoY3Yt6EuzHeaWFGqCWlmfCppr6zyBgjGDiyCgDdG9Ey71k2FytcBRCP3o'
+      Authorization: 'Bearer BQCzuIpi1nr3BmvoTzssZa5ITZZdMErqjKosNi6fYwucCy__csC4tpYDKdsDuFTmUM23sSc0JJCeBWz2kRk'
       });
     return this.http.get(URL, { headers });
    }
@@ -28,10 +28,25 @@ export class SpotifyService {
                .pipe( map( (data: any ) => data.albums.items));
    }
 
-   getArtist( termino: string): any {
+   getArtists( termino: string): any {
 
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
               // tslint:disable-next-line: no-string-literal
                .pipe( map( (data: any) => data['artists'].items));
+   }
+
+
+   getArtist( id: string): any {
+
+    return this.getQuery(`artists/${ id }`);
+              // tslint:disable-next-line: no-string-literal
+              // .pipe( map( (data: any) => data['artists'].items));
+   }
+
+   getTopTracks( id: string): any {
+
+    return this.getQuery(`artists/${ id }/top-tracks?country=US`)
+              // tslint:disable-next-line: no-string-literal
+               .pipe( map( (data: any) => data['tracks']));
    }
 }
