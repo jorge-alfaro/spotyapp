@@ -13,14 +13,14 @@ export class SpotifyService {
    }
 
 
-   getQuery(query: string): any {
+    getQuery(query: string): any {
 
-    const URL = `https://api.spotify.com/v1/${query}`;
-    const headers = new HttpHeaders({
-      Authorization: 'Bearer BQCzuIpi1nr3BmvoTzssZa5ITZZdMErqjKosNi6fYwucCy__csC4tpYDKdsDuFTmUM23sSc0JJCeBWz2kRk'
-      });
-    return this.http.get(URL, { headers });
-   }
+  //   const URL = `https://api.spotify.com/v1/${query}`;
+  //   const headers = new HttpHeaders({
+  //     Authorization: 'Bearer here-token'
+  //   });
+  //   return this.http.get(URL, { headers });
+    }
 
    getNewReleases(): any {
 
